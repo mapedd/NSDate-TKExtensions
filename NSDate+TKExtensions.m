@@ -77,20 +77,6 @@
     return realWeekday;
 }
 
-- (NSString *)TKDateWeekDayMonthDayHourFormat{
-    
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    
-    
-    return [NSString stringWithFormat:@"%@, %d %@, %@ %@:%@",
-            TKLocalizedDayOfTheWeek([self TKRealWeekday]),
-            [self TKDay],
-            [[df monthSymbols] objectAtIndex:[self TKMonth]-1],
-            NSLocalizedString(@"hour",nil),
-            [NSString stringWithFormat:@"%@%d",[self TKHour] > 9 ? @"" : @"0",[self TKHour]],
-            [NSString stringWithFormat:@"%@%d",[self TKMinute] > 9 ? @"" : @"0", [self TKMinute]]
-            ];
-}
 
 + (NSDate *)dateWithYear:(NSInteger)year
                    month:(NSInteger)month

@@ -20,8 +20,6 @@
 
 - (NSInteger)TKRealWeekday;
 
-- (NSString *)TKDateWeekDayMonthDayHourFormat;
-
 + (NSDate *)dateWithYear:(NSInteger)year
                    month:(NSInteger)month
                      day:(NSInteger)day
