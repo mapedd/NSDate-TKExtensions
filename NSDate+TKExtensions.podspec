@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "NSDate+TKExtensions"
   s.version      = "0.1.1"
-  s.summary      = "A short description of NSDate+TKExtensions."
+  s.summary      = "Set of usefull categories for NSDate."
   s.homepage     = "https://github.com/mapedd/NSDate-TKExtensions"
   s.license      = 'Apache'
   s.author       = { "Tomek Kuzma" => "mapedd@sezamkowa.net" }
