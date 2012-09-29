@@ -1,5 +1,5 @@
 //
-//  NSDate+TKExtensions.h
+//  NSDate-TKExtensions.h
 //  Pure
 //
 //  Created by Tomek K on 8/15/12.

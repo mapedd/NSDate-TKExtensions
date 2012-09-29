@@ -1,12 +1,12 @@
 //
-//  NSDate+TKExtensions.m
+//  NSDate-TKExtensions.m
 //  Pure
 //
 //  Created by Tomek K on 8/15/12.
 //  Copyright (c) 2012 Creadhoc Sp. z.o.o www.creadhoc.pl  , Tomasz Kuzma (mapedd@mapedd.com). All rights reserved.
 //
 
-#import "NSDate+TKExtensions.h"
+#import "NSDate-TKExtensions.h"
 
 #define ISO_TIMEZONE_UTC_FORMAT @"Z"
 #define ISO_TIMEZONE_OFFSET_FORMAT @"%+02d%02d"
