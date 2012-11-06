@@ -29,6 +29,11 @@ int main(int argc, const char * argv[])
         
         NSCAssert([novStart TKDay] == 1 && [novStart TKMonth] == 11, @"first day is 1");
         NSCAssert([octEnd TKDay] == 31 && [octEnd TKMonth] == 10, @"first day is 1");
+        
+        NSDate *date5 = [NSDate date];
+        NSDate *date6 = [NSDate dateWithYear:date5.TKYear month:date5.TKMonth day:date5.TKDay];
+        
+        NSCAssert([date5 daysAreTheSame:date6], @"days should be the same");
 
         
         pause();

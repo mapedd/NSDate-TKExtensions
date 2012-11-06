@@ -351,7 +351,11 @@
 }
 
 - (BOOL)daysAreTheSame:(NSDate *)date{
-    return (date.TKYear == self.TKYear) && (date.TKMonth == self.TKMonth) && (date.TKDay == self.TKDay);
+
+    NSDateComponents *selfDateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:date];
+
+    return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month) && (dateComponents.day == selfDateComponents.day);
 }
 
 @end
