@@ -34,9 +34,14 @@ int main(int argc, const char * argv[])
         NSDate *date6 = [NSDate dateWithYear:date5.TKYear month:date5.TKMonth day:date5.TKDay];
         
         NSCAssert([date5 daysAreTheSame:date6], @"days should be the same");
-
         
-        pause();
+        NSDate *date7 = [NSDate dateWithYear:2012 month:11 day:6 hour:12 minute:0 second:0];
+        NSDate *date8 = [NSDate dateWithYear:2012 month:11 day:6 hour:13 minute:0 second:0];
+        
+        NSDate *center78 = [date7 centerBetweenDate:date8];
+        
+        NSCAssert(center78.TKHour == 12 && center78.TKMinute == 30, @"12.30 is the correct hour");
+        
     }
     return 0;
 }

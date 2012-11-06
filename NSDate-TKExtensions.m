@@ -358,4 +358,9 @@
     return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month) && (dateComponents.day == selfDateComponents.day);
 }
 
+
+- (NSDate *)centerBetweenDate:(NSDate *)date{
+    return [self dateByAddingTimeInterval:[date timeIntervalSinceDate:self]/ 2];
+}
+
 @end
