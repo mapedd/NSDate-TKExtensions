@@ -79,9 +79,14 @@
 
 - (NSString *)localDescription;
 
+/* Begining/End of the unit */
 - (NSDate *)TKDateByMovingToBeginningOfDay;
 
 - (NSDate *)TKDateByMovingToEndOfDay;
+
+- (NSDate *)TKDateByMovingToBeginningOfTheMonth;
+
+- (NSDate *)TKDateByMovingToEndOfTheMonth;
 
 - (NSInteger)TKDaysBetweenDate:(NSDate *)date;
 

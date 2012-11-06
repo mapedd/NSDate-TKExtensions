@@ -308,6 +308,30 @@
     return [[NSCalendar currentCalendar] dateFromComponents:parts];
 }
 
+- (NSDate *)TKDateByMovingToBeginningOfTheMonth{
+    NSDateComponents* parts = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:self];
+    
+    [parts setDay:1];
+    [parts setHour:0];
+    [parts setMinute:0];
+    [parts setSecond:0];
+    
+    return [[NSCalendar currentCalendar] dateFromComponents:parts];
+}
+
+- (NSDate *)TKDateByMovingToEndOfTheMonth{
+    
+    NSDateComponents* parts = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:self];
+    
+    [parts setMonth:[parts month]+1];
+    [parts setDay:0];
+    [parts setHour:23];
+    [parts setMinute:59];
+    [parts setSecond:59];
+    
+    return [[NSCalendar currentCalendar] dateFromComponents:parts];
+}
+
 - (NSInteger)TKDaysBetweenDate:(NSDate *)date{
     return [self timeIntervalSinceDate:date] / (60 * 60 * 24);
 }
