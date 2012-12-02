@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/mapedd/NSDate-TKExtensions"
   s.license      = 'Apache'
   s.author       = { "Tomek Kuzma" => "mapedd@sezamkowa.net" }
-  s.source       = { :git => "https://github.com/mapedd/NSDate-TKExtensions.git", :tag => "0.3" }
+  s.source       = { :git => "https://github.com/mapedd/NSDate-TKExtensions.git", :tag => "0.31" }
   s.platform     = :ios
   s.source_files = 'NSDate-TKExtensions.{h,m}'
   s.requires_arc = true

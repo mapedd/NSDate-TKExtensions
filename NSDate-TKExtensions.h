@@ -98,6 +98,8 @@
 
 - (BOOL)daysAreTheSame:(NSDate *)date;
 
+- (BOOL)monthsAreTheSame:(NSDate *)date;
+
 /* Assuming object is earlier than date */
 - (NSDate *)centerBetweenDate:(NSDate *)date;
 

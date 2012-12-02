@@ -358,6 +358,13 @@
     return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month) && (dateComponents.day == selfDateComponents.day);
 }
 
+- (BOOL)monthsAreTheSame:(NSDate *)date{
+    NSDateComponents *selfDateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:date];
+    
+    return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month);
+}
+
 
 - (NSDate *)centerBetweenDate:(NSDate *)date{
     return [self dateByAddingTimeInterval:[date timeIntervalSinceDate:self]/ 2];
