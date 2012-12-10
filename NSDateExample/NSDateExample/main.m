@@ -18,6 +18,7 @@ int main(int argc, const char * argv[])
         NSDate *date1 = [NSDate dateWithYear:2012 month:10 day:9 hour:12 minute:0 second:0];
         NSDate *date2 = [NSDate dateWithYear:2012 month:10 day:10 hour:12 minute:0 second:0];
         NSInteger dayDiff = [date2 TKDaysBetweenDate:date1];
+        
         /* We are using C Assertion, ObjC assertion can't be used inside functions */
         NSCAssert(dayDiff == 1, @"day diff should be 1");
         
@@ -41,6 +42,22 @@ int main(int argc, const char * argv[])
         NSDate *center78 = [date7 centerBetweenDate:date8];
         
         NSCAssert(center78.TKHour == 12 && center78.TKMinute == 30, @"12.30 is the correct hour");
+        
+        NSDate *date9 = [NSDate dateWithYear:2012 month:11 day:6 hour:12 minute:30 second:0];
+        
+        NSDate *date10 = [date9 TKDateBySubtractingMinutes:30];
+        
+        NSCAssert(date10.TKHour == 12 && date10.TKMinute == 0, @"12:00 is the proper time");
+        
+        NSDate *date11 = [date9 TKDateByAddingMinutes:33];
+        
+        NSCAssert(date11.TKHour == 13 && date11.TKMinute == 3, @"13:03 is the proper time");
+        
+        NSDate *date12 = [NSDate dateWithYear:2010 month:12 day:12 hour:12 minute:0 second:10];
+        
+        NSDate *date13 = [date12 TKDateByAddingSeconds:50];
+        
+        NSCAssert(date13.TKHour == 12 && date13.TKMinute == 1, @"12:01 is the proper time");
         
     }
     return 0;

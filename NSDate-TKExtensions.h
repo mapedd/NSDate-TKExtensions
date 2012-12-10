@@ -38,6 +38,13 @@
 - (NSString *)TKYearDashMonthDashDay;
 
 
+- (NSDate *)TKDateByAddingSeconds:(NSInteger)seconds;
+
+- (NSDate *)TKDateBySubtractingSeconds:(NSInteger)seconds;
+
+- (NSDate *)TKDateByAddingMinutes:(NSInteger)minutes;
+
+- (NSDate *)TKDateBySubtractingMinutes:(NSInteger)minutes;
 
 - (NSDate *)TKDateByAddingHours:(NSInteger)hours;
 
@@ -97,6 +104,8 @@
 - (BOOL)isSaturday;
 
 - (BOOL)daysAreTheSame:(NSDate *)date;
+
+- (BOOL)weeksAreTheSame:(NSDate *)date;
 
 - (BOOL)monthsAreTheSame:(NSDate *)date;
 

@@ -148,6 +148,40 @@
     return [df stringFromDate:self];
 }
 
+#pragma mark - Adding/Subtracting
+
+- (NSDate *)TKDateByAddingSeconds:(NSInteger)seconds{
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [comps setSecond:seconds];
+    
+    NSDate *newDate = [calendar dateByAddingComponents:comps toDate:self options:0];
+    
+    return newDate;
+}
+
+- (NSDate *)TKDateBySubtractingSeconds:(NSInteger)seconds{
+    return [self TKDateByAddingSeconds:-seconds];
+}
+
+- (NSDate *)TKDateByAddingMinutes:(NSInteger)minutes{
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [comps setMinute:minutes];
+    
+    NSDate *newDate = [calendar dateByAddingComponents:comps toDate:self options:0];
+    
+    return newDate;
+}
+
+- (NSDate *)TKDateBySubtractingMinutes:(NSInteger)minutes{
+    return [self TKDateByAddingMinutes:-minutes];
+}
 
 - (NSDate *)TKDateByAddingHours:(NSInteger)hours{
     
@@ -356,6 +390,13 @@
     NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:date];
 
     return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month) && (dateComponents.day == selfDateComponents.day);
+}
+
+- (BOOL)weeksAreTheSame:(NSDate *)date{
+    NSDateComponents *selfDateComponents = [[NSCalendar currentCalendar] components:NSWeekCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSWeekCalendarUnit fromDate:date];
+    
+    return (dateComponents.week == selfDateComponents.week);
 }
 
 - (BOOL)monthsAreTheSame:(NSDate *)date{
