@@ -59,6 +59,14 @@ int main(int argc, const char * argv[])
         
         NSCAssert(date13.TKHour == 12 && date13.TKMinute == 1, @"12:01 is the proper time");
         
+        NSDate *date14 = [[NSDate date] TKDateByMovingToBeginningOfTheYear];
+        
+        NSCAssert(date14.TKDay == 1 && date14.TKMonth == 1, @"Should be first day of the year");
+        
+        NSDate *date15 = [[NSDate date] TKDateByMovingToEndOfTheYear];
+        
+        NSCAssert(date15.TKDay == 31 && date15.TKMonth == 12, @"Should be last day of the year");
+        
     }
     return 0;
 }

@@ -324,6 +324,8 @@
     return [dateFormatter stringFromDate:self];
 }
 
+
+
 - (NSDate *)TKDateByMovingToBeginningOfDay{
     NSDateComponents* parts = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:self];
     [parts setHour:0];
@@ -341,6 +343,7 @@
     
     return [[NSCalendar currentCalendar] dateFromComponents:parts];
 }
+
 
 - (NSDate *)TKDateByMovingToBeginningOfTheMonth{
     NSDateComponents* parts = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:self];
@@ -365,6 +368,28 @@
     
     return [[NSCalendar currentCalendar] dateFromComponents:parts];
 }
+
+
+- (NSDate *)TKDateByMovingToBeginningOfTheYear{
+    NSDateComponents* parts = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:self];
+    
+    [parts setDay:1];
+    [parts setHour:0];
+    [parts setMinute:0];
+    [parts setSecond:0];
+    [parts setMonth:1];
+    
+    return [[NSCalendar currentCalendar] dateFromComponents:parts];
+}
+
+- (NSDate *)TKDateByMovingToEndOfTheYear{
+    
+    NSDate *firstDayNextYear = [[self TKDateByMovingToBeginningOfTheYear] TKDateByAddingYears:1];
+    NSDate *lastDayThisYear = [firstDayNextYear TKDateBySubtractingDays:1];
+    return [lastDayThisYear TKDateByMovingToEndOfDay];
+}
+
+
 
 - (NSInteger)TKDaysBetweenDate:(NSDate *)date{
     return [self timeIntervalSinceDate:date] / (60 * 60 * 24);
