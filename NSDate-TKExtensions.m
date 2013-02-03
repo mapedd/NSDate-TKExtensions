@@ -370,6 +370,8 @@
     return [self timeIntervalSinceDate:date] / (60 * 60 * 24);
 }
 
+
+
 - (BOOL)isToday{
     NSDate *today = [NSDate date];
     return [self daysAreTheSame:today];
@@ -383,6 +385,8 @@
 - (BOOL)isSaturday{
     return self.TKRealWeekday == 6;
 }
+
+
 
 - (BOOL)daysAreTheSame:(NSDate *)date{
 
@@ -404,6 +408,14 @@
     NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:date];
     
     return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month);
+}
+
+- (BOOL)yearsAreTheSame:(NSDate *)date{
+    
+    NSDateComponents *selfDateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:date];
+    
+    return (dateComponents.year == selfDateComponents.year);
 }
 
 

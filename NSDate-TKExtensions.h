@@ -103,11 +103,15 @@
 
 - (BOOL)isSaturday;
 
+
+
 - (BOOL)daysAreTheSame:(NSDate *)date;
 
 - (BOOL)weeksAreTheSame:(NSDate *)date;
 
 - (BOOL)monthsAreTheSame:(NSDate *)date;
+
+- (BOOL)yearsAreTheSame:(NSDate *)date;
 
 /* Assuming object is earlier than date */
 - (NSDate *)centerBetweenDate:(NSDate *)date;
