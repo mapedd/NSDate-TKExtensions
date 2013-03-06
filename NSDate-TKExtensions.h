@@ -66,6 +66,7 @@
 
 - (NSDate *)TKDateBySubtractingYears:(NSInteger)years;
 
+
 - (NSInteger)TKAgeInFullYears;
 
 - (NSInteger)TKYear;
@@ -127,5 +128,62 @@
 
 /* Assuming object is earlier than date */
 - (NSDate *)centerBetweenDate:(NSDate *)date;
+
+@end
+
+
+
+@interface NSDate (TKExtensionsCachedCalednar)
+
+- (NSDate *)TKDateByAddingSeconds:(NSInteger)seconds withCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateBySubtractingSeconds:(NSInteger)seconds withCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByAddingMinutes:(NSInteger)minutes withCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateBySubtractingMinutes:(NSInteger)minutes withCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByAddingHours:(NSInteger)hours withCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateBySubtractingHours:(NSInteger)hours withCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByAddingDays:(NSInteger)days withCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateBySubtractingDays:(NSInteger)days withCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByAddingWeeks:(NSInteger)weeks withCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateBySubtractingWeeks:(NSInteger)weeks withCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByAddingMonths:(NSInteger)months withCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateBySubtractingMonths:(NSInteger)months withCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByAddingYears:(NSInteger)years withCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateBySubtractingYears:(NSInteger)years withCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByMovingToBeginningOfDayWithCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateByMovingToEndOfDayWithCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByMovingToBeginningOfTheMonthWithCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateByMovingToEndOfTheMonthWithCalendar:(NSCalendar *)calendar;
+
+
+- (NSDate *)TKDateByMovingToBeginningOfTheYearWithCalendar:(NSCalendar *)calendar;
+
+- (NSDate *)TKDateByMovingToEndOfTheYearWithCalendar:(NSCalendar *)calendar;
+
+
 
 @end
