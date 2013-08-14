@@ -186,4 +186,26 @@
 
 
 
+- (NSInteger)TKYearWithCalendar:(NSCalendar *)calendar;
+
+- (NSInteger)TKMonthWithCalendar:(NSCalendar *)calendar;
+
+- (NSInteger)TKDayWithCalendar:(NSCalendar *)calendar;
+
+- (NSInteger)TKHourWithCalendar:(NSCalendar *)calendar;
+
+- (NSInteger)TKMinuteWithCalendar:(NSCalendar *)calendar;
+
+
+- (BOOL)daysAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar;
+
+- (BOOL)weeksAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar;
+
+- (BOOL)monthsAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar;
+
+- (BOOL)yearsAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar;
+
+
+- (NSInteger)TKDaysBetweenDate:(NSDate *)date withCalendar:(NSCalendar *)calendar;
+
 @end

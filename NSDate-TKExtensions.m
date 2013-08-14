@@ -607,4 +607,71 @@
     return [lastDayThisYear TKDateByMovingToEndOfDay];
 }
 
+
+- (NSInteger)TKYearWithCalendar:(NSCalendar *)calendar{
+    NSDateComponents *dateComponents = [calendar components:NSYearCalendarUnit fromDate:self];
+    return [dateComponents year];
+}
+
+- (NSInteger)TKMonthWithCalendar:(NSCalendar *)calendar{
+    NSDateComponents *dateComponents = [calendar components:NSMonthCalendarUnit fromDate:self];
+    return [dateComponents month];
+}
+
+- (NSInteger)TKDayWithCalendar:(NSCalendar *)calendar{
+    NSDateComponents *dateComponents = [calendar components:NSDayCalendarUnit fromDate:self];
+    return [dateComponents day];
+}
+
+- (NSInteger)TKHourWithCalendar:(NSCalendar *)calendar{
+    NSDateComponents *dateComponents = [calendar components:NSHourCalendarUnit fromDate:self];
+    return [dateComponents hour];
+}
+
+- (NSInteger)TKMinuteWithCalendar:(NSCalendar *)calendar{
+    NSDateComponents *dateComponents = [calendar components:NSMinuteCalendarUnit fromDate:self];
+    return [dateComponents minute];
+}
+
+
+- (BOOL)daysAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar{
+    
+    NSDateComponents *selfDateComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:date];
+    
+    return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month) && (dateComponents.day == selfDateComponents.day);
+}
+
+- (BOOL)weeksAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar{
+    NSDateComponents *selfDateComponents = [calendar components:NSWeekCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:NSWeekCalendarUnit fromDate:date];
+    
+    return (dateComponents.week == selfDateComponents.week);
+}
+
+- (BOOL)monthsAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar{
+    NSDateComponents *selfDateComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:date];
+    
+    return (dateComponents.year == selfDateComponents.year) && (dateComponents.month == selfDateComponents.month);
+}
+
+- (BOOL)yearsAreTheSame:(NSDate *)date withCalendar:(NSCalendar *)calendar{
+    
+    NSDateComponents *selfDateComponents = [calendar components:NSYearCalendarUnit fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:NSYearCalendarUnit fromDate:date];
+    
+    return (dateComponents.year == selfDateComponents.year);
+}
+
+
+
+- (NSInteger)TKDaysBetweenDate:(NSDate *)date withCalendar:(NSCalendar *)calendar{
+    NSDateComponents *dateComponents = [calendar components:NSDayCalendarUnit
+                                                   fromDate:date
+                                                     toDate:self
+                                                    options:0];
+    return [dateComponents day];
+}
+
 @end
