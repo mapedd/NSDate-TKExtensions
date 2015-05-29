@@ -129,6 +129,9 @@
 /* Assuming object is earlier than date */
 - (NSDate *)centerBetweenDate:(NSDate *)date;
 
+
+- (NSInteger)daysCountInMonth:(NSDate *)date;
+
 @end
 
 

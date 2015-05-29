@@ -446,6 +446,17 @@
     return [self dateByAddingTimeInterval:[date timeIntervalSinceDate:self]/ 2];
 }
 
+
+- (NSInteger)daysCountInMonth:(NSDate *)date{
+    
+    NSCalendar *c = [NSCalendar currentCalendar];
+    NSRange days = [c rangeOfUnit:NSDayCalendarUnit
+                           inUnit:NSMonthCalendarUnit
+                          forDate:date];
+    
+    return days.length;
+}
+
 @end
 
 
