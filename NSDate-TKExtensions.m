@@ -447,12 +447,12 @@
 }
 
 
-- (NSInteger)daysCountInMonth:(NSDate *)date{
+- (NSInteger)daysCountInCurrentMonth{
     
     NSCalendar *c = [NSCalendar currentCalendar];
     NSRange days = [c rangeOfUnit:NSDayCalendarUnit
                            inUnit:NSMonthCalendarUnit
-                          forDate:date];
+                          forDate:self];
     
     return days.length;
 }

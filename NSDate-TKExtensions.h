@@ -130,7 +130,7 @@
 - (NSDate *)centerBetweenDate:(NSDate *)date;
 
 
-- (NSInteger)daysCountInMonth:(NSDate *)date;
+- (NSInteger)daysCountInCurrentMonth;
 
 @end
 
