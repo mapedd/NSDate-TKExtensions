@@ -347,6 +347,7 @@
     
     
     NSCalendar* cal = [[NSCalendar currentCalendar] copy];
+    [cal setFirstWeekday:2];
     NSDate* startOfTheWeek;
     NSTimeInterval interval;
     [cal rangeOfUnit:NSWeekCalendarUnit startDate:&startOfTheWeek interval:&interval forDate:self];
@@ -357,6 +358,7 @@
 - (NSDate *)TKDateByMovingToEndOfTheWeek{
     
     NSCalendar* cal = [[NSCalendar currentCalendar] copy];
+    [cal setFirstWeekday:2];
     NSDate* startOfTheWeek;
     NSTimeInterval interval;
     [cal rangeOfUnit:NSWeekCalendarUnit startDate:&startOfTheWeek interval:&interval forDate:self];
