@@ -100,6 +100,12 @@
 - (NSDate *)TKDateByMovingToEndOfTheMonth;
 
 
+- (NSDate *)TKDateByMovingToBeginningOfTheWeek;
+
+- (NSDate *)TKDateByMovingToEndOfTheWeek;
+
+
+
 - (NSDate *)TKDateByMovingToBeginningOfTheYear;
 
 - (NSDate *)TKDateByMovingToEndOfTheYear;

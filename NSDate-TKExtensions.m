@@ -343,6 +343,30 @@
 }
 
 
+- (NSDate *)TKDateByMovingToBeginningOfTheWeek{
+    
+    
+    NSCalendar* cal = [[NSCalendar currentCalendar] copy];
+    NSDate* startOfTheWeek;
+    NSTimeInterval interval;
+    [cal rangeOfUnit:NSWeekCalendarUnit startDate:&startOfTheWeek interval:&interval forDate:self];
+    return startOfTheWeek;
+    
+}
+
+- (NSDate *)TKDateByMovingToEndOfTheWeek{
+    
+    NSCalendar* cal = [[NSCalendar currentCalendar] copy];
+    NSDate* startOfTheWeek;
+    NSTimeInterval interval;
+    [cal rangeOfUnit:NSWeekCalendarUnit startDate:&startOfTheWeek interval:&interval forDate:self];
+    return [startOfTheWeek dateByAddingTimeInterval:interval - 1];
+    
+}
+
+
+
+
 - (NSDate *)TKDateByMovingToBeginningOfTheMonth{
     NSDateComponents* parts = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self];
     
