@@ -299,6 +299,27 @@
     return [dateComponents minute];
 }
 
+- (NSInteger)TKHourString{
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh"];
+    NSString* string = [formatter stringFromDate:date];
+    return string;
+    
+}
+
+- (NSInteger)TKMinuteString{
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"mm"];
+    NSString* string = [formatter stringFromDate:date];
+    return string;
+    
+}
+
+
+
+
 - (BOOL) isEarlierThanDate: (NSDate *) aDate{
 	return ([self earlierDate:aDate] == self);
 }

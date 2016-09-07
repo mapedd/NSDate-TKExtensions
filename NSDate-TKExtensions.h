@@ -79,6 +79,16 @@
 
 - (NSInteger)TKMinute;
 
+
+
+- (NSInteger)TKHourString;
+
+- (NSInteger)TKMinuteString;
+
+
+
+
+
 - (BOOL)isEarlierThanDate:(NSDate *)aDate;
 
 - (BOOL)isLaterThanDate:(NSDate *)aDate;
