@@ -302,7 +302,7 @@
 - (NSInteger)TKHourString{
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"hh"];
+    [formatter setDateFormat:@"HH"];
     NSString* string = [formatter stringFromDate:date];
     return string;
     
