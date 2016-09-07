@@ -303,7 +303,7 @@
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH"];
-    NSString* string = [formatter stringFromDate:date];
+    NSString* string = [formatter stringFromDate:self];
     return string;
     
 }
@@ -312,7 +312,7 @@
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"mm"];
-    NSString* string = [formatter stringFromDate:date];
+    NSString* string = [formatter stringFromDate:self];
     return string;
     
 }
