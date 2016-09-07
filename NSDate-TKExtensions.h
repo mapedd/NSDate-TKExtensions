@@ -79,6 +79,16 @@
 
 - (NSInteger)TKMinute;
 
+
+
+- (NSString *)TKHourString;
+
+- (NSString *)TKMinuteString;
+
+
+
+
+
 - (BOOL)isEarlierThanDate:(NSDate *)aDate;
 
 - (BOOL)isLaterThanDate:(NSDate *)aDate;
@@ -98,6 +108,12 @@
 - (NSDate *)TKDateByMovingToBeginningOfTheMonth;
 
 - (NSDate *)TKDateByMovingToEndOfTheMonth;
+
+
+- (NSDate *)TKDateByMovingToBeginningOfTheWeek;
+
+- (NSDate *)TKDateByMovingToEndOfTheWeek;
+
 
 
 - (NSDate *)TKDateByMovingToBeginningOfTheYear;
@@ -128,6 +144,9 @@
 
 /* Assuming object is earlier than date */
 - (NSDate *)centerBetweenDate:(NSDate *)date;
+
+
+- (NSInteger)daysCountInCurrentMonth;
 
 @end
 
