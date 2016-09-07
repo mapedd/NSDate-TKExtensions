@@ -299,7 +299,7 @@
     return [dateComponents minute];
 }
 
-- (NSInteger)TKHourString{
+- (NSString *)TKHourString{
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH"];
@@ -308,7 +308,7 @@
     
 }
 
-- (NSInteger)TKMinuteString{
+- (NSString *)TKMinuteString{
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"mm"];

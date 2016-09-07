@@ -81,9 +81,9 @@
 
 
 
-- (NSInteger)TKHourString;
+- (NSString *)TKHourString;
 
-- (NSInteger)TKMinuteString;
+- (NSString *)TKMinuteString;
 
 
 
